@@ -1,0 +1,15 @@
+div {
+  color: blue;
+  font-size: 20px;
+}
+
+/* class 명으로 CSS 배경이미지 상대경로로 넣기 */
+.logo {
+  /* 가로 */
+  width: 500px;     
+  /* 세로 */
+  height: 500px;
+  /* 경로 */
+  background-image: url("../images/logo.png");
+}
+
