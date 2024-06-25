@@ -1,0 +1,19 @@
+div {
+  /* 가로 */
+  width : 200px;
+  /* 세로 */
+  height: 100px;  
+  /* 배경색 */
+  background-color: orange;  
+}
+
+/* Emmet */
+/* class 가 logo인 것 을 선택 */
+.logo {
+  /* 가로 */
+  width: 200px;
+  /* 세로 */
+  height: 100px;
+  /* 배경색 */
+  background-color: orange;
+}
