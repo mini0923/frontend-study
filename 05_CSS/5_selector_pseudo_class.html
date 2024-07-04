@@ -69,17 +69,40 @@
     color: red;
   } */
 
+  /* 짝수 */
   /* .fruits *:nth-child(2n) {
+    color: blue;
+  }
+  .fruits *:nth-child(even) {
     color: blue;
   } */
   
+  /* 홀수 */
   /* .fruits *:nth-child(2n+1) {
+    color: green;
+  } 
+  .fruits *:nth-child(odd) {
     color: green;
   } */
 
-  .fruits *:nth-child(n+2) {
+  /* .fruits *:nth-child(n+2) {
     color: cyan;
+  } */
+
+  /* Quiz : 자식들 중 앞에 3개만 선택 */
+  /* n이 앞으로 나와야 동작 */
+
+  /* .fruits *:nth-child(-n+3){
+    color: red;
+  } */
+
+  
+  /* :not(s) (선택자 s를 제외) */
+  .fruits *:not(span, h3){
+    color: blue;
   }
+
+
 
   </style>
 
