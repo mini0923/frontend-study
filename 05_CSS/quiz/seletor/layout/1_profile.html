@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    div {
+      /* div 영역에 text-align 을 해야 가운데 정렬이 가능하다.  */
+      /* text-align: center; */
+    }
+    .profile > img {
+      /* (참고) img는 인라인 요소이지만 가로/세로 길이가 지정가능하다. */
+      width: 100px;
+      /* 요소를 원으로 만들기 */
+      border-radius: 50%;
+      /* 이미지 가운데 정렬 (2가지) 
+        1) 부모에 text-align : center; 사용
+        2) 가로 길이를 갖는 블록 요소에 margin : 0 auto; 
+           (해당 img 태그는 인라인 요소이므로 display를 통해 block으로 바꿔준다.)
+      */
+      display: block;
+      margin: 0 auto;
+    }
+
+    .title {
+      /* 글자 가운데 정렬 */
+      text-align: center;
+      /* 폰트 24px 로 변경 */
+      font-size: 24px;
+    }
+  
+    .content {
+      text-align: center;
+    }
+    
+    /* 일부 글자만 스타일 */
+    .color {
+      color: red;
+      /* 글자 두껍게 */
+      font-weight: 700;
+    }
+
+    .box {
+      /* 가로 넓이 지정 */
+      width: 450px;
+
+      /* 배경색 지정 */
+      background-color: cornflowerblue;
+      
+      /* 글자 색상 */
+      color: white;
+
+      /* 글자 가운데 정렬 */
+      text-align: center;
+
+      /* 위아래 공간 20px 씩 */
+      padding : 20px 0;
+
+      /* 둥글게 */
+      border-radius: 5px;
+
+      /* 가운데 정렬 */
+      margin : 0 auto;
+
+      /* x y 색상 */
+      box-shadow: 5px 5px black;
+    }
+
+  </style>
+
+<body>
+  <!-- div.profile>img -->
+    <div class="profile">
+      <img src="./image.png" alt="트위터 사진">
+    </div>
+
+  <!-- h3.title -->
+    <h3 class="title">Twitter</h3>
+
+  <!-- p.content -->
+    <p class="content"><span class="color">Twitter</span> so good</p>
+
+  <!-- div.box -->
+    <div class="box">안녕하세요 Twitter 입니다. <br>현재 웹 프론트엔드/백엔드 수업듣고있습니다. <br> 어렵네요 </div>
+
+</body>
+</html>
