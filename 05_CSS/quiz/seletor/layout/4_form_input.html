@@ -36,23 +36,29 @@
     }
 
     .form-background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #333;
       padding: 30px 0;
-      
     }
 
     .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #fff;
-      height: 500px;
       padding: 30px 0;
       margin: 40px;
+      width: 80%;
+      max-width: 600px;
     }
 
     .form-container form {
       margin: 20px;
     }
 
-    #text-input {
+    .text-input {
       width: 100%;
       font-size: 20px;
       border: 2px solid #ccc;
@@ -61,12 +67,11 @@
       transition: 0.5s;
     }
 
-    #text-input:focus {
+    .text-input:focus {
       border: 2px solid red;
     }
 
     .button-box {
-
       width: 100px;
       background-color: orange;
       padding: 5px;
@@ -77,16 +82,25 @@
     }
 
     .button-box:hover {
-      background-color: orangered;
+      background-color: coral;
     }
 
     .name-container {
       display: flex;
+      justify-content: space-between;
+    }
+
+    .name {
+      border: 20;
     }
 
     .box-container {
       display: flex;
       justify-content: space-between;
+    }
+
+    .name-left {
+      margin-left: 10px;
     }
 
   </style>
@@ -116,23 +130,30 @@
       <form>
         <h3>Contact Us</h3>
         <p>Your Email</p>
-        <textarea name="text" id="text-input" placeholder="email@example.com" rows="1"></textarea>
-
-        <div class="name-container"> 
-          <p>First Name</p>
-          <textarea name="text" id="text-input" class="text-input-1" rows="1"></textarea>
+        <input class="text-input" placeholder="email@example.com"></input>
+        <div class="name-container">
+          <div class="name"> 
+            <p>First Name</p>
+            <input class="text-input"></input>
+          </div>
           
-          <p>Last Name</p>
-          <textarea name="text" id="text-input" class="text-input-1" rows="1"></textarea>
+          <div class="name-left"> 
+            <p>Last Name</p>
+            <input class="text-input"></input>
+          </div>
         </div>
-
+          
         <p>Message</p>
-        <textarea name="Message" id="text-input"></textarea>
+        <textarea name="Message" class="text-input"></textarea>
 
 
-        <div class="box-container">   
-          <input type="checkbox" class="input-box">Agree
-          <button type="button" class="button-box">SEND</button>
+        <div class="box-container"> 
+          <div>   
+            <input type="checkbox" class="input-box">Agree
+          </div>
+          <div>
+            <button type="button" class="button-box">SEND</button>
+          </div>
         </div>
 
       </form>
