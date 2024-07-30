@@ -13,27 +13,25 @@ spyEls.forEach(function(spyEl){
   
 });
 
-// 모달창 띄우기
+// 모달창
 let modalEl = document.querySelector('#modal');
-let modalBtn = document.querySelectorAll('.port .btn-modal');
-let closeBtn = document.querySelector('#modal .btn-close');
+let modalBtn = document.querySelector('.port .btn-modal');
+
 console.log(modalBtn);
-console.log(modalBtn[0]);
-console.log(modalBtn[1]);
 
-modalBtn[0].addEventListener('click', function() {
-  // console.log('클릭됨');
+// 모달창 띄우기
+modalBtn.addEventListener('click', function() {
   modalEl.style.display = 'flex';
 })
 
-modalBtn[1].addEventListener('click', function() {
-  // console.log('클릭됨');
-  modalEl.style.display = 'flex';
+// 모달 외부 클릭 시 닫기
+window.addEventListener('click', function(event){
+  if (event.target == modalEl){
+    modalEl.style.display = 'none';
+  }
 })
 
-closeBtn.addEventListener('click', function(){
-  modalEl.style.display = 'none';
-})
+
 
 // 현재 연도 표시
 // 날짜 정보를 가진 JS의 Date 객체를 활용
@@ -70,25 +68,3 @@ window.addEventListener('scroll', function() {
   }
 
 })
-
-const swiper = new Swiper('#modal .swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});

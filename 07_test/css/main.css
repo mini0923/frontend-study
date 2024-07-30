@@ -1,4 +1,418 @@
-.swiper {
-  width: 600px;
-  height: 300px;
+/* COMMON */
+
+* {
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+/* 영문에만 적용할 폰트 */
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.inner {
+  /* 고정 길이 = 고정형 */
+  /* width: 1200px; */
+  /* 최대값만 제한=반응형 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 120px;
+  padding: 10px;
+  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수 있으니 블록으로 지정 */
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn.btn--brown {
+  color: #592b18;
+  border-color: #592b18;
+}
+
+.btn.btn--brown:hover {
+  color: #fff;  
+  background-color: #592b18;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c8c8c8;
+  /* 고정된 헤더 만들기 */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+
+header > .inner {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img{
+  width: 40px;
+  /* 가로 너비만 지정하면 세로 높이는 비율에 맞춰 정해진다. */
+}
+
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline)
+    아래의 공간을 제거하기 위해
+  */
+  display: block;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title::after {
+  content: ""; /* content는 필수 속성 */
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+  margin: 10px auto 0 ;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li{
+  padding: 10px 20px;
+  font-weight: 700;
+}
+
+header nav ul li a:hover {
+  color: black;
+  text-shadow: 1px 1px 5px #c8c8c8;
+}
+
+/* About */
+.about {
+  /* (주의) 100%는 부모의 가로 길이(<body>)가 기준이 된다. */
+  /* margin-top: 100vh; */
+  padding-top: 100px;
+  background-color: #f7fdff;
+  
+}
+
+.about .inner {
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__wrapper .about__img {
+  width: 40%;
+}
+
+.about__wrapper .about__img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.about__wrapper .about__text {
+  width: 45%;
+}
+
+.about .about__wrapper .about__text {
+  width: 45%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about .about__wrapper .about__text .slogan{
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.about .about__wrapper .about__text h3{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.about .about__wrapper .about__text h4{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px; 
+}
+
+.about .about__wrapper .about__text li{
+  line-height: 1.8;
+}
+
+.about .about__btn {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+}
+
+.about .about__btn img {
+  display: inline;
+  width: 28px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Skill */
+.skill {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ffefc0;
+}
+
+.skill .skill__list {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.skill .skill__list > li {
+  width: 130px;
+  background-color: #fff;
+  border-radius: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-20px);
+  transition: 0.5s;
+}
+
+.skill .skill__list > li:hover{
+  transform: translateY(-10px);
+}
+
+.skill .skill__list li div p {
+  font-weight: bold;
+  margin: 15px 0 10px;
+  font-size: 17px;
+  letter-spacing: -2px;
+}
+
+.skill .skill__list li div p::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #333;
+  margin: 5px auto 0;
+}
+/* Work */
+.work {
+  background-color: #f0dede;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.work .port,
+.work .port__img {
+  display: flex;
+  margin: 20px;
+  background-color: #ffffff;
+}
+
+.work .port .port__img,
+.work .port .port__text {
+  color: #592b18;
+  width: 50%;
+}
+
+.work .port .port__img img {
+  width: 100%;
+  height: 100%;
+}
+
+.work .port .port__text {
+  font-size: 14px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.work .port .port__text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.work .port .port__text li {
+  line-height: 1.8;
+}
+
+.work .port .port__text li span{
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.work .port .btn-group {
+  display: flex;
+  column-gap: 40px;
+}
+
+/* Contact */
+.contact {
+  padding: 50px 0;
+}
+
+.contact .contact__info li {
+  line-height: 2;
+  text-align: center;
+
+  /* 애니메이션 효과 추가 */
+  opacity: 0;
+  transition: 1s;
+}
+
+.contact .contact__info li:nth-child(1),
+.contact .contact__info li:nth-child(3) {
+  /* 오른쪽에서 왼쪽으로 나타내는 효과 */
+  transform: translateX(150px);
+  
+}
+
+.contact .contact__info li:nth-child(2) {
+  /* 왼쪽에서 오른쪽으로 나타내는 효과 */
+  transform: translateX(-150px);
+}
+
+.contact.show .contact__info li{
+  opacity: 1;
+  transform: translate(0);
+}
+
+.contact .contact__sns {
+  margin-top: 20px;
+}
+
+.contact .contact__sns ul {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+}
+/* 애니메이션 효과 추가 */
+.contact .contact__sns ul li {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+
+.contact.show .contact__sns ul li {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.contact.show .contact__sns ul li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.contact.show .contact__sns ul li:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.contact .contact__sns ul li img {
+  width: 30px;
+}
+
+/* Footer */
+footer .copyright {
+  text-align: center;
+  font-weight: 600;
+  line-height: 200px;
+}
+
+
+/* Modal */
+#modal {
+  /* 화면 전체 영역 덮기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#modal .modal__inner {
+  width: 30%;
+  position: relative;
+}
+
+#modal .modal__inner img{
+  width: 100%;
+  transition: 0.7s;
+}
+
+/* hover 시 1.5배 확대 */
+#modal .modal__inner img:hover {
+  transform:scale(1.5);
+}
+
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #fff8e8;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+
