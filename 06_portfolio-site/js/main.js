@@ -16,11 +16,12 @@ spyEls.forEach(function(spyEl){
 // 모달창
 let modalEl = document.querySelector('#modal');
 let modalBtn = document.querySelector('.port .btn-modal');
+let img = document.querySelector('#myImage');
 
 console.log(modalBtn);
 
 // 모달창 띄우기
-modalBtn.addEventListener('click', function() {
+img.addEventListener('click', function() {
   modalEl.style.display = 'flex';
 })
 
@@ -30,8 +31,6 @@ window.addEventListener('click', function(event){
     modalEl.style.display = 'none';
   }
 })
-
-
 
 // 현재 연도 표시
 // 날짜 정보를 가진 JS의 Date 객체를 활용
@@ -48,7 +47,7 @@ let toTopBtn = document.querySelector('#to-top');
 // 페이지에 스크롤 이벤트 감지를 추가
 // window: 브라우저 창 객체
 window.addEventListener('scroll', function() {
-  console.log(window.scrollY); // y축 스크롤 위치
+  // console.log(window.scrollY); // y축 스크롤 위치
 
   // 페이지 스크롤 위치가
   // 500px을 넘기면 요소를 보이고
@@ -66,5 +65,4 @@ window.addEventListener('scroll', function() {
     toTopBtn.style.opacity = 0;
     toTopBtn.style.transform = 'translateX(100px)';
   }
-
 })
