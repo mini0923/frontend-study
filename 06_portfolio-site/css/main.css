@@ -219,26 +219,69 @@ header nav ul li a:hover {
 
 .about__wrapper .about__img {
   width: 35%;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   margin-bottom: 70px;
+  position:relative;
 }
 
 .about .about__wrapper .about__img img {
-  width: 70%;
+  width: 100%;
   border-radius: 50%;
   transition: 0.5s;
   opacity: 0;
   transform: translateX(-100px);
 }
 
+.speech-bubble {
+  top: -50px;
+  right: -75px;
+  position: absolute;
+  width: 108px;
+  height: 100px;
+  background: #d3ffff;
+  border-radius: 4.4em;
+  text-align: center;
+  line-height: 2;
+  margin-left: 150px;
+  opacity: 0;
+  transition: 0.8s;
+}
+ 
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #d3ffff;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+  opacity: 0;
+  transition: 0.8s;
+
+}
+
+
+
 .about.show .about__wrapper .about__img img {
   opacity: 1;
   transform: translateX(0px);
 }
 
-.about__wrapper .about__img img:hover {
-  width: 100%;
+.about.show .about__wrapper .about__img img:hover {
+  transform: translateX(0px) scale(1.2);
+}
+.about.show .about__wrapper .about__img img:hover + .speech-bubble{
+  opacity: 1;
+}
+
+.about.show .about__wrapper .about__img img:hover + .speech-bubble::after{
+  opacity: 1;
 }
 
 .about__wrapper .about__text {
