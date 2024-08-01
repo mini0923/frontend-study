@@ -726,8 +726,6 @@ header .inner .header__title {
   transform: translateX(0);
 }
 
-
-
 .project .port .port__img img {
   cursor: pointer;
 }
@@ -766,7 +764,6 @@ footer .copyright {
   line-height: 200px;
 }
 
-
 /* Modal */
 #modal {
   /* 화면 전체 영역 덮기 */
@@ -782,6 +779,7 @@ footer .copyright {
   align-items: center;
   display: none;
 }
+
 
 #to-top {
   width: 42px;

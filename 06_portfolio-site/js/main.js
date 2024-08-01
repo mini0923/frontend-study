@@ -32,6 +32,7 @@ window.addEventListener('click', function(event){
   }
 })
 
+
 // 현재 연도 표시
 // 날짜 정보를 가진 JS의 Date 객체를 활용
 new Date().getFullYear(); // 현재 연도 정보가 숫자데이터로 변환
