@@ -121,8 +121,8 @@ header nav ul li{
 
 header nav ul li a:hover {
   color: black;
-  text-shadow: 1px 1px 5px #c8c8c8;
-  animation: text-shadow-drop-center 2s; /* 애니메이션 설정 */
+  /* text-shadow: 1px 1px 5px #c8c8c8; */
+  animation: text-shadow-drop-center 0.5s forwards; /* 애니메이션 설정 */
 
 }
 
@@ -131,7 +131,7 @@ header nav ul li a:hover {
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   100% {
-    text-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.61);
   }
 }
 @keyframes text-shadow-drop-center {
@@ -139,7 +139,7 @@ header nav ul li a:hover {
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
   100% {
-    text-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.61);
   }
 }
 
